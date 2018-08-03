@@ -11,7 +11,8 @@
   ],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "bs-platform": "^2.2.2"
+  "devDependencies": {},
+  "dependencies": {
+    "bs-platform": "^4.0.3"
   }
 }

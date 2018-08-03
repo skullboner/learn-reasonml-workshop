@@ -11,9 +11,9 @@ let example: intStringAndChar = (5, "hello", 'A');
 let (i, s, c) = example;
 
 let () = {
-  assert (i == 5);
-  assert (s == "hello");
-  assert (c == 'A');
+  assert(i == 5);
+  assert(s == "hello");
+  assert(c == 'A');
 };
 
 /*
@@ -23,7 +23,10 @@ let () = {
 type coordinate = (int, int);
 
 /* TODO */
-let add = (coord1, coord2) => failwith("For you to implement");
+let add = ((coord11, coord12), (coord21, coord22)) => (
+  coord11 + coord21,
+  coord12 + coord22,
+);
 
 /* Now consider a name type containing strings representing first and last name. */
 type name = (string, string);
@@ -59,11 +62,15 @@ let nestedCharPair: pair(pair(char)) = (('a', 'b'), ('c', 'd'));
 /* Write functions to extract the first and second elements from a pair. */
 /* let first: pair('a) => 'a */
 /* TODO */
-let first = pair => failwith("For you to implement");
+let first = pair => {
+  let (a, _) = pair;
+  a;
+};
 
 /* let second: pair('a) => 'a */
 /* TODO */
-let second = pair => failwith("For you to implement");
+ let second = ((_, a)) => a;
+
 
 Test.runAll([
   (add((1, 2), (3, 4)) == (4, 6), "add"),
